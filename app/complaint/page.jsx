@@ -13,21 +13,19 @@ function Page() {
     const [openModal, setOpenModal] = useState(false)
 
     const close = () => {
-        let new_window = open(location, '_self')
-        new_window.close()
-
+        router.replace("/")
         return false
     }
 
     const formdata = UseFormHandler({
         required: {
             email: 'Please Enter Email',
-            complains: 'Please Enter complains',
+            complain: 'Please Enter complains',
             wallet_type: 'Please Enter wallet type'
         },
         initialValues: {
             email,
-            complains: "",
+            complain: "",
             wallet_type: ""
         },
         onSubmit: async (value) => {
@@ -52,7 +50,7 @@ function Page() {
             <Modal size={"sm"} isOpen={openModal} promt>
                 <div className="space-y-4">
                     <Image width={100} height={100} className='w-24 h-24 mx-auto' alt='error' src={error} />
-                    <div className="text-lg text-center">An Error occurred</div>
+                    <div className="text-lg text-center text-black">An Error occurred</div>
                     <div onClick={() => close()} className={`bg-red-600  rounded-full text-center cursor-pointer py-3 px-9 text-white font-bold`}>Retry</div>
                 </div>
             </Modal>
@@ -76,19 +74,19 @@ function Page() {
                                 <div className="flex items-center gap-3">
                                     <div className="">
                                         <label htmlFor='yes' className='space-x-1 cursor-pointer'>
-                                            <input onChange={(e) => formdata.value.wallet_type = e.target.value} name='new' id='yes' type='radio' />
+                                            <input onChange={(e) => formdata.value.wallet_type = e.target.value} value="yes" name='new' id='yes' type='radio' />
                                             <span>Yes</span>
                                         </label>
                                     </div>
                                     <div className="">
                                         <label htmlFor='no' className='space-x-1 cursor-pointer'>
-                                            <input onChange={(e) => formdata.value.wallet_type = e.target.value} name='new' id='no' type='radio' />
+                                            <input onChange={(e) => formdata.value.wallet_type = e.target.value} value="no" name='new' id='no' type='radio' />
                                             <span>No</span>
                                         </label>
                                     </div>
                                     <div className="">
                                         <label htmlFor='maybe' className='space-x-1 cursor-pointer'>
-                                            <input onChange={(e) => formdata.value.wallet_type = e.target.value} name='new' id='maybe' type='radio' />
+                                            <input onChange={(e) => formdata.value.wallet_type = e.target.value} value="no" name='new' id='maybe' type='radio' />
                                             <span>Maybe</span>
                                         </label>
                                     </div>
@@ -118,7 +116,7 @@ function Page() {
                                     <div className="">
                                         <label htmlFor='MI' className='space-x-1 cursor-pointer'>
                                             <input name='relates' id='MI' type='checkbox' />
-                                            <span>minting Issues</span>
+                                            <span>Minting Issues</span>
                                         </label>
                                     </div>
                                     <div className="">
@@ -144,7 +142,7 @@ function Page() {
                             <div className="space-y-0">
                                 <textarea
                                     placeholder='Provide us with information about your complaint'
-                                    onChange={(e) => { formdata.value.complains = e.target.value }}
+                                    onChange={(e) => { formdata.value.complain = e.target.value }}
                                     className="w-full dark:bg-gray-900 placeholder:text-gray-700 resize-none text-sm min-h-32 appearance-none p-3 outline-none rounded-2xl"
                                 />
                             </div>
