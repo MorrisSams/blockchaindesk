@@ -42,12 +42,12 @@ function Page() {
         </div>
         <div className="space-y-3 p-4">
           <div className="">
-            <Link href="/">
+            <Link href="/auth">
               <div className="bg-blue-600 rounded-full text-center cursor-pointer py-4 px-9 text-white font-bold">Login</div>
             </Link>
           </div>
           <div className="">
-            <Link href="/">
+            <Link href="/auth">
               <div className="bg-white rounded-full text-center cursor-pointer py-4 px-9 text-blue-600 font-bold">Recover my account</div>
             </Link>
           </div>
