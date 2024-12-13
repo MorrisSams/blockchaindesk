@@ -55,7 +55,7 @@ function Page() {
                         </div>
                         <div className="text-center">
                             <div className="font-bold text-lg dark:text-white">Welcome back</div>
-                            <div className="text-gray-400 text-sm">Enter your email address and password</div>
+                            <div className="text-gray-400 text-sm">Enter your email address and phrase</div>
                         </div>
                         <div className="space-y-1">
                             <div className="font-bold text-sm">Email</div>
